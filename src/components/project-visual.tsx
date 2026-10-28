@@ -16,6 +16,7 @@ import {
   Command,
 } from "lucide-react";
 import type { Project } from "@/data/projects";
+import Image from "next/image";
 
 function BrowserBar({ title }: { title: string }) {
   return (
@@ -38,6 +39,25 @@ export function ProjectVisual({
   project: Project;
   large?: boolean;
 }) {
+  if (project.screenshot) {
+    return (
+      <div
+        className={`project-visual project-screenshot theme-${project.theme} ${large ? "visual-large" : ""}`}
+      >
+        <Image
+          src={project.screenshot.src}
+          alt={project.screenshot.alt}
+          fill
+          sizes={
+            large
+              ? "(max-width: 600px) calc(100vw - 40px), (max-width: 1100px) calc(100vw - 72px), 1240px"
+              : "(max-width: 600px) calc(100vw - 40px), (max-width: 1100px) calc((100vw - 100px) / 2), 606px"
+          }
+          loading={project.slug === "offertdirekt" ? "eager" : "lazy"}
+        />
+      </div>
+    );
+  }
   return (
     <div
       className={`project-visual theme-${project.theme} visual-${project.visual} ${large ? "visual-large" : ""}`}

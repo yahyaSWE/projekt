@@ -10,6 +10,8 @@ export type Project = {
   tags: string[];
   repo?: string;
   website?: string;
+  screenshot?: { src: string; alt: string };
+  appStores?: { label: string; url: string; platform: "ios" | "android" }[];
   contributionHeading?: string;
   visibility: "public" | "private" | "unknown";
   theme: string;
@@ -50,10 +52,26 @@ export const projects: Project[] = [
     eyebrow: "Från förfrågan till signerat uppdrag",
     summary: "Smartare offerter. Mer tid för hantverket.",
     description:
-      "En publicerad app för hantverkare och serviceyrken. AI hjälper till att skapa offerter, kunden signerar med BankID och verksamheten hanteras i en separat adminpanel.",
+      "En publicerad app för iOS och Android med webbversion för hantverkare och serviceyrken. Skapa offerter med rösten och AI, signera med BankID och hantera verksamheten i en separat adminpanel.",
     category: "AI & automation",
     tags: ["AI", "BankID", "Webb & mobil"],
     repo: "https://github.com/yahyaSWE/offertdirekt",
+    screenshot: {
+      src: "/projects/offertdirekt.png",
+      alt: "Offertdirekts webbplats med röststyrd offertgenerering och BankID-signering",
+    },
+    appStores: [
+      {
+        label: "App Store",
+        url: "https://apps.apple.com/us/app/offertdirekt/id6762245944",
+        platform: "ios",
+      },
+      {
+        label: "Google Play",
+        url: "https://play.google.com/store/apps/details?id=com.offertdirekt.app&hl=sv",
+        platform: "android",
+      },
+    ],
     visibility: "private",
     theme: "sage",
     visual: "quote",
@@ -63,8 +81,9 @@ export const projects: Project[] = [
       "Jag byggde en lösning där AI stödjer offertarbetet och BankID används för signering. App, webbversion och en separat adminpanel möter olika behov i samma produkt.",
     features: [
       "AI som stöd i offertgenereringen",
+      "Röststyrd offertgenerering",
       "Signering med BankID",
-      "App och webbversion",
+      "App för iOS och Android samt webbversion",
       "Separat adminpanel",
     ],
   },
@@ -108,6 +127,10 @@ export const projects: Project[] = [
     category: "E-handel",
     tags: ["E-commerce management", "Plattformsutveckling", "Marknadsföring"],
     website: "https://elscootersweden.com/",
+    screenshot: {
+      src: "/projects/elscooter-sweden.png",
+      alt: "Elscooter Swedens e-handel med elfordon och produktkategorier",
+    },
     visibility: "public",
     theme: "mint",
     visual: "scooter",
@@ -157,6 +180,11 @@ export const projects: Project[] = [
     category: "Plattformar",
     tags: ["Next.js", "Prisma", "Chatwoot"],
     repo: "https://github.com/yahyaSWE/devanor",
+    website: "https://devanor.com/",
+    screenshot: {
+      src: "/projects/devanor.png",
+      alt: "Devanors webbplats med presentation av tjänster inom elektrisk design",
+    },
     visibility: "private",
     theme: "blue",
     visual: "portal",
@@ -181,6 +209,10 @@ export const projects: Project[] = [
     category: "AI & automation",
     tags: ["React", "Express", "MCP"],
     repo: "https://github.com/yahyaSWE/CRM-sportative",
+    screenshot: {
+      src: "/projects/leadflow-crm.png",
+      alt: "LeadFlows CRM-översikt med dagens möten, uppgifter och nya leads",
+    },
     visibility: "public",
     theme: "peach",
     visual: "crm",
@@ -255,6 +287,10 @@ export const projects: Project[] = [
     category: "Plattformar",
     tags: ["Bokföring", "MCP", "Claude"],
     repo: "https://github.com/yahyaSWE/bokio-rea",
+    screenshot: {
+      src: "/projects/bokforing.png",
+      alt: "Bokföringsprogrammets översikt med resultat, fakturor, rapporter och huvudbok",
+    },
     visibility: "public",
     theme: "stone",
     visual: "ledger",
@@ -279,6 +315,10 @@ export const projects: Project[] = [
     category: "AI & automation",
     tags: ["Next.js", "RAG", "E-handel"],
     repo: "https://github.com/yahyaSWE/tibb.nu",
+    screenshot: {
+      src: "/projects/tibb.png",
+      alt: "Tibb.nu med presentation av behandlingar, bokningar och kurser",
+    },
     visibility: "public",
     theme: "cream",
     visual: "health",
@@ -303,6 +343,11 @@ export const projects: Project[] = [
     category: "Plattformar",
     tags: ["Kurser", "Medlemskap", "Webbutveckling"],
     repo: "https://github.com/slowlax-it/slowlax-web",
+    website: "https://slowlax.se/",
+    screenshot: {
+      src: "/projects/slowlax.png",
+      alt: "Slowlax webbplats med kurser och medlemskap inom aktiehandel",
+    },
     visibility: "unknown",
     theme: "sky",
     visual: "trading",

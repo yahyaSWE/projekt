@@ -8,6 +8,7 @@ import {
   Check,
   Globe,
   LockKeyhole,
+  Smartphone,
 } from "lucide-react";
 import { Github } from "@/components/github-icon";
 import { projects } from "@/data/projects";
@@ -59,36 +60,79 @@ export default async function ProjectPage({ params }: Props) {
           </div>
         </div>
         <p className="detail-summary">{project.summary}</p>
-        <ProjectVisual project={project} large />
+        {project.screenshot ? (
+          <a
+            className="detail-screenshot-link"
+            href={project.screenshot.src}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Öppna fullstor skärmbild av ${project.name}`}
+          >
+            <ProjectVisual project={project} large />
+            <span className="screenshot-expand">
+              Visa större bild <ArrowUpRight size={14} />
+            </span>
+          </a>
+        ) : (
+          <ProjectVisual project={project} large />
+        )}
         <div className="detail-content">
           <aside className="detail-sidebar">
             <span className="eyebrow">OM PROJEKTET</span>
             <h2>{project.eyebrow}</h2>
             <p>{project.description}</p>
-            {project.website && (
-              <a
-                className="button button-outline"
-                href={project.website}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Globe size={17} /> Besök webbplatsen <ArrowUpRight size={16} />
-              </a>
+            {project.appStores && (
+              <div className="app-store-links">
+                <span className="eyebrow">HÄMTA APPEN</span>
+                {project.appStores.map((store) => (
+                  <a
+                    className="app-store-link"
+                    key={store.platform}
+                    href={store.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Smartphone size={21} />
+                    <span>
+                      <small>
+                        {store.platform === "ios"
+                          ? "För iPhone och iPad"
+                          : "För Android"}
+                      </small>
+                      <strong>{store.label}</strong>
+                    </span>
+                    <ArrowUpRight size={16} />
+                  </a>
+                ))}
+              </div>
             )}
-            {project.repo && (
-              <a
-                className="button button-outline"
-                href={project.repo}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Github size={17} />{" "}
-                {project.visibility === "private"
-                  ? "Privat GitHub-repo"
-                  : "Visa på GitHub"}
-                <ArrowUpRight size={16} />
-              </a>
-            )}
+            <div className="project-external-links">
+              {project.website && (
+                <a
+                  className="button button-outline"
+                  href={project.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Globe size={17} /> Besök webbplatsen{" "}
+                  <ArrowUpRight size={16} />
+                </a>
+              )}
+              {project.repo && (
+                <a
+                  className="button button-outline"
+                  href={project.repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Github size={17} />{" "}
+                  {project.visibility === "private"
+                    ? "Privat GitHub-repo"
+                    : "Visa på GitHub"}
+                  <ArrowUpRight size={16} />
+                </a>
+              )}
+            </div>
             {project.visibility === "private" && (
               <small className="repo-note">
                 <LockKeyhole size={12} /> Källkoden kräver åtkomst till repot.
