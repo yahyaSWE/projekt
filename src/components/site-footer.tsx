@@ -1,5 +1,4 @@
-import { ArrowUpRight, Mail } from "lucide-react";
-import { Github } from "./github-icon";
+import { ArrowUpRight, Link2, Mail, Phone } from "lucide-react";
 import { profile } from "@/data/projects";
 
 export function SiteFooter() {
@@ -21,18 +20,28 @@ export function SiteFooter() {
               lösa.
             </p>
           </div>
-          <a
-            className="contact-link"
-            href={profile.email ? `mailto:${profile.email}` : profile.github}
-            target={profile.email ? undefined : "_blank"}
-            rel="noopener noreferrer"
-          >
-            {profile.email ? <Mail size={22} /> : <Github size={22} />}
-            <span>
-              {profile.email ? "Skicka ett mejl" : "Hitta mig på GitHub"}
-            </span>
-            <ArrowUpRight size={22} />
-          </a>
+          <div className="contact-links">
+            <a
+              className="contact-link"
+              href={profile.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Link2 size={22} />
+              <span>LinkedIn</span>
+              <ArrowUpRight size={22} />
+            </a>
+            <a className="contact-link" href={`mailto:${profile.email}`}>
+              <Mail size={22} />
+              <span>{profile.email}</span>
+              <ArrowUpRight size={22} />
+            </a>
+            <a className="contact-link" href={`tel:${profile.phone}`}>
+              <Phone size={22} />
+              <span>{profile.phoneDisplay}</span>
+              <ArrowUpRight size={22} />
+            </a>
+          </div>
         </div>
       </section>
       <footer className="site-footer container">

@@ -4247,6 +4247,22 @@ button {
     padding: 6px 8px;
   }
 }
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: min(100%, 325px);
+}
+.contact-links .contact-link > span {
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 800px) {
+  .contact-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

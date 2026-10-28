@@ -15,7 +15,7 @@ npm run dev
 
 ## Redigera innehållet
 
-- `src/data/projects.ts`: namn, kontakt, projekttexter, teknikval, ordning, GitHub-länkar, webbplatser, appbutiker, skärmbilder och resultat. Lägg till en e-postadress i `profile.email` för att visa mejlkontakt.
+- `src/data/projects.ts`: namn, kontakt, projekttexter, teknikval, ordning, GitHub-länkar, webbplatser, appbutiker, skärmbilder och resultat. LinkedIn, e-post och telefon uppdateras i `profile`.
 - `public/projects/`: Johans skärmbilder för Offertdirekt, Elscooter Sweden, Devanor, LeadFlow CRM, Bokföring, Tibb.nu och Slowlax. Bilderna visas i sin helhet på kort och projektsidor och kan öppnas i full storlek från projektsidan.
 - `src/components/project-visual.tsx`: visar projektets skärmbild om `screenshot` finns i datafilen. Övriga projekt använder kodritade illustrationer märkta **Gränssnittsskiss**.
 - `src/app/globals.css`: färger, typografi och responsiv layout.

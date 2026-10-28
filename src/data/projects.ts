@@ -37,9 +37,10 @@ export type Project = {
 export const profile = {
   name: "Johan Blomdahl",
   role: "Utvecklare & produktbyggare",
-  github: "https://github.com/yahyaSWE",
-  // Lägg till din e-postadress här för att visa en mejllänk under Kontakt.
-  email: "",
+  linkedin: "https://www.linkedin.com/in/johan-blomdahl-359515235/",
+  email: "johan.blomdahl90@gmail.com",
+  phone: "+46762249455",
+  phoneDisplay: "076-224 94 55",
 };
 
 // Redigera texter, teknikval och projektordning här. Inga GitHub-nycklar behövs.

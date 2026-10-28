@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, Search, X } from "lucide-react";
-import { categories, projects } from "@/data/projects";
+import { categories, profile, projects } from "@/data/projects";
 import { ProjectVisual } from "./project-visual";
 
 export function ProjectGrid() {
@@ -31,11 +31,6 @@ export function ProjectGrid() {
             Idéer som blivit verklighet<span className="olive-text">.</span>
           </h1>
         </div>
-        <p>
-          Olika utmaningar. Samma drivkraft.
-          <br />
-          Att bygga något som gör skillnad.
-        </p>
       </div>
       <div className="project-controls">
         <div className="filter-list" aria-label="Filtrera projekt">
@@ -129,12 +124,8 @@ export function ProjectGrid() {
       )}
       <div className="projects-bottom">
         <span>Från en första idé till en fungerande produkt.</span>
-        <a
-          href="https://github.com/yahyaSWE"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Mer på GitHub <ArrowUpRight size={15} />
+        <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
+          Hitta mig på LinkedIn <ArrowUpRight size={15} />
         </a>
       </div>
     </section>
