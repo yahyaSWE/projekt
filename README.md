@@ -33,4 +33,4 @@ npm run build
 
 Bygget genererar statiska HTML-sidor i `out/`, inklusive alla projektsidor. Webbplatsen kan köras på valfri statisk hosting. Kör `npm start` efter bygget för lokal förhandsgranskning på http://127.0.0.1:3000, eller `npm run dev` för utveckling.
 
-Typsnitten hämtas vid byggtid via `next/font/google`. Instrument Serif finns som lokalt levererad typsnittsfil. Inga externa bildtjänster används.
+Typsnitten hämtas vid byggtid via `next/font/google` och levereras lokalt. Inga externa bildtjänster används.

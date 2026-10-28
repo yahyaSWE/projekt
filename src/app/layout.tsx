@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope, DM_Sans, Instrument_Serif } from "next/font/google";
+import { Manrope, DM_Sans } from "next/font/google";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -10,13 +10,6 @@ const manrope = Manrope({
 const dmSans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-body",
-  display: "swap",
-});
-const serif = Instrument_Serif({
-  subsets: ["latin"],
-  weight: "400",
-  style: "italic",
-  variable: "--font-serif",
   display: "swap",
 });
 
@@ -43,7 +36,7 @@ export default function RootLayout({
   return (
     <html
       lang="sv"
-      className={`${manrope.variable} ${dmSans.variable} ${serif.variable}`}
+      className={`${manrope.variable} ${dmSans.variable}`}
     >
       <body>
         <a className="skip-link" href="#main">

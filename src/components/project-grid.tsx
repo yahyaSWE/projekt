@@ -27,9 +27,9 @@ export function ProjectGrid() {
           <p className="eyebrow">
             <span className="tiny-cross">+</span> UTVALDA ARBETEN
           </p>
-          <h2 id="projects-heading">
+          <h1 id="projects-heading">
             Idéer som blivit verklighet<span className="olive-text">.</span>
-          </h2>
+          </h1>
         </div>
         <p>
           Olika utmaningar. Samma drivkraft.

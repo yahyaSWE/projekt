@@ -1,11 +1,4 @@
-import {
-  ArrowDown,
-  ArrowUpRight,
-  Code2,
-  Workflow,
-  Layers3,
-  Sparkles,
-} from "lucide-react";
+import { Code2, Workflow, Layers3, Sparkles } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { ProjectGrid } from "@/components/project-grid";
@@ -15,50 +8,6 @@ export default function Home() {
     <div id="top">
       <SiteHeader />
       <main id="main">
-        <section className="hero container">
-          <div className="hero-topline">
-            <span className="hero-kicker">
-              <i /> UTVECKLARE & PRODUKTBYGGARE
-            </span>
-            <span className="hero-index">PORTFOLIO / 2026</span>
-          </div>
-          <h1>
-            Jag bygger digitala
-            <br />
-            idéer till <span className="hero-italic">verklighet.</span>
-            <span className="hero-asterisk" aria-hidden="true">
-              ✳
-            </span>
-          </h1>
-          <div className="hero-bottom">
-            <div className="hero-description">
-              <span className="intro-line" />
-              <p>
-                Jag är Johan Blomdahl. Jag bygger webbappar,
-                <br className="desktop-break" /> AI-lösningar och e-handel –
-                från första tanke
-                <br className="desktop-break" /> till en produkt som fungerar i
-                vardagen.
-              </p>
-            </div>
-            <a className="button button-dark hero-cta" href="#projekt">
-              Utforska mina projekt <ArrowDown size={17} />
-            </a>
-          </div>
-          <div className="hero-footnote">
-            <span>TEKNIK MED ETT TYDLIGT SYFTE</span>
-            <div>
-              <span>Webbutveckling</span>
-              <i />
-              <span>AI & automation</span>
-              <i />
-              <span>E-handel</span>
-            </div>
-            <span className="scroll-hint">
-              SCROLLA FÖR ATT UTFORSKA <ArrowDown size={12} />
-            </span>
-          </div>
-        </section>
         <ProjectGrid />
         <section className="about-section" id="om">
           <div className="container about-layout">
@@ -71,7 +20,7 @@ export default function Home() {
                 <br />
                 Fokuserad på
                 <br />
-                <span className="serif-italic">det den gör möjligt.</span>
+                <span className="olive-text">det den gör möjligt.</span>
               </h2>
               <div className="about-signature">
                 Johan Blomdahl <span>↗</span>
